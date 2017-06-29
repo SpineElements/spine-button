@@ -1,6 +1,6 @@
 {
   "name": "spine-button",
-  "description": "A wrapper around the `paper-button` providing additional mixins and variables for styling.",
+  "description": "An element that inherits the `paper-button` behavior and appearance while providing additional mixins and variables for styling.",
   "main": "spine-button.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
@@ -9,7 +9,8 @@
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
     "web-component-tester": "Polymer/web-component-tester#^6.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
+    "iron-doc-viewer": "PolymerElements/iron-doc-viewer#3.0.3"
   },
   "resolutions": {
     "polymer": "^2.0.0"
