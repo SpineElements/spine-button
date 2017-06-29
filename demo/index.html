@@ -10,19 +10,128 @@
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../paper-styles/paper-styles.html">
     <link rel="import" href="../spine-button.html">
-
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles">
-      </style>
-    </custom-style>
   </head>
   <body>
     <div class="vertical-section-container centered">
-      <h3>Basic spine-button demo</h3>
+      <h3>Styling &lt;paper-button> hover behavior</h3>
       <demo-snippet>
         <template>
-          <spine-button></spine-button>
+          <custom-style>
+            <style is="custom-style" include="demo-pages-shared-styles">
+              spine-button.blue {
+                --spine-button-flat: {
+                  color: blue;
+                };
+                --spine-button-raised: {
+                  color: blue;
+                };
+                --spine-button-flat-hover: {
+                  background: rgba(0, 0, 255, .06);
+                };
+                --spine-button-raised-hover: {
+                  background: rgba(0, 0, 255, .06);
+                };
+              }
+
+              spine-button.transparent {
+                --spine-button-flat-hover: {
+                  background: rgba(0, 0, 0, .06);
+                };
+                --spine-button-raised-hover: {
+                  background: rgba(0, 0, 0, .06);
+                };
+              }
+            </style>
+          </custom-style>
+
+          <spine-button class="blue">Blue hover</spine-button>
+          <spine-button class="transparent">Transparent hover</spine-button>
+          <spine-button class="blue" raised>Blue hover</spine-button>
+          <spine-button class="transparent" raised>Transparent hover</spine-button>
+        </template>
+      </demo-snippet>
+
+      <h3>Styling raised and flat buttons separately</h3>
+      <demo-snippet>
+        <template>
+          <custom-style>
+            <style is="custom-style" include="demo-pages-shared-styles">
+              spine-button.pink {
+                --spine-button-flat: {
+                  color: deeppink;
+                  font-size: 13px;
+                  line-height: 20px;
+                };
+                --spine-button-flat-hover: {
+                  background: rgba(255, 0, 0, .68);
+                  color: white;
+                };
+              }
+
+              spine-button.dark {
+                --spine-button-raised: {
+                  background: black;
+                  color: white;
+                };
+                --spine-button-raised-hover: {
+                  background: rgba(0, 0, 0, .68);
+                };
+              }
+            </style>
+          </custom-style>
+
+          <spine-button>Flat</spine-button>
+          <spine-button class="pink">Flat</spine-button>
+          <spine-button raised>Raised</spine-button>
+          <spine-button class="dark" raised>Raised</spine-button>
+        </template>
+      </demo-snippet>
+
+      <h3>Styling button content</h3>
+      <demo-snippet>
+        <template>
+          <custom-style>
+            <style is="custom-style" include="demo-pages-shared-styles">
+              spine-button {
+                height: 36px;
+              }
+
+              spine-button.left {
+                --spine-button-content: {
+                  position: absolute;
+                  left: 0;
+                }
+              }
+
+              spine-button.top {
+                --spine-button-content: {
+                  position: absolute;
+                  top: 0;
+                }
+              }
+
+              spine-button.right {
+                --spine-button-content: {
+                  position: absolute;
+                  right: 0;
+                }
+              }
+
+              spine-button.bottom {
+                --spine-button-content: {
+                  position: absolute;
+                  bottom: 0;
+                }
+              }
+            </style>
+          </custom-style>
+
+          <spine-button class="top">Top</spine-button>
+          <spine-button class="right">Right</spine-button>
+          <spine-button class="bottom" raised>Bottom</spine-button>
+          <spine-button class="left" raised>Left</spine-button>
         </template>
       </demo-snippet>
     </div>
