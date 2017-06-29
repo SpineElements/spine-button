@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="spine-button">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `spine-button`
+     * A wrapper around the `paper-button` providing additional mixins and variables for styling.
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class SpineButton extends Polymer.Element {
+      static get is() { return 'spine-button'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'spine-button'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(SpineButton.is, SpineButton);
+  </script>
+</dom-module>
