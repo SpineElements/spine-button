@@ -1,6 +1,6 @@
 {
   "name": "spine-button",
-  "description": "An element that inherits the `paper-button` behavior and appearance while providing additional mixins and variables for styling.",
+  "description": "An element that inherits the `paper-button`'s behavior and appearance while providing additional mixins and variables for styling.",
   "main": "spine-button.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
