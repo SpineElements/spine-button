@@ -1,33 +1,59 @@
 <link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-button/paper-button.html">
 
+
+<!--
+An element that inherits the `paper-button` behavior and appearance
+while providing additional mixins and variables for styling.
+
+For usage examples see `paper-button` documentation.
+
+### Styling
+
+Additional mixins for styling:
+
+custom property | Description | Default
+----------------|-------------|----------
+`--spine-button-flat` | Mixin applied to a flat `paper-button` | `{}`
+`--spine-button-raised` | Mixin applied to a raised `paper-button` | `{}`
+`--spine-button-flat-hover` | Mixin applied to a flat button after it's been hovered using mouse | `{}`
+`--spine-button-raised-hover` | Mixin applied to a raised button after it's been hovered using mouse | `{}`
+`--spine-button-content` | Mixin applied to a button content | `{}`
+
+All default `paper-button` mixins are available for styling.
+
+-->
 <dom-module id="spine-button">
   <template>
-    <style>
-      :host {
-        display: block;
+    <style include="paper-button">
+      :host(:not([raised])) {
+        @apply --spine-button-flat;
+      }
+
+      :host(:not([raised]):hover) {
+        @apply --spine-button-flat-hover;
+      }
+
+      :host([raised]) {
+        @apply --spine-button-raised;
+      }
+
+      :host([raised]:hover) {
+        @apply --spine-button-raised-hover;
+      }
+
+      .content {
+        @apply --spine-button-content;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+
+    <span class="content"><slot></slot></span>
   </template>
 
   <script>
-    /**
-     * `spine-button`
-     * A wrapper around the `paper-button` providing additional mixins and variables for styling.
-     *
-     * @customElement
-     * @polymer
-     * @demo demo/index.html
-     */
-    class SpineButton extends Polymer.Element {
-      static get is() { return 'spine-button'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'spine-button'
-          }
-        };
+    class SpineButton extends window.customElements.get('paper-button') {
+      static get is() {
+        return 'spine-button';
       }
     }
 
