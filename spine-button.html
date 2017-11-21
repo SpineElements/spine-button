@@ -42,6 +42,10 @@ All default `paper-button` mixins are available for styling.
         @apply --spine-button-raised-hover;
       }
 
+      :host([raised][disabled]) {
+        @apply --paper-button-disabled;
+      }
+
       span {
         @apply --spine-button-content;
       }
